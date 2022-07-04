@@ -1,38 +1,18 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 
-const Page = () => {
-  const router = useRouter();
-  //{id} matches the file name []:id]
-  const { id } = router.query;
+const Page =  () => {
+  const router = useRouter()
+  const { id }= router.query
 
-  //query params
-  if (id === '69') {
-    return (
-      <div>
-        <h1>
-          you nasty: {id}
-        </h1>
-
-        <Link href='/'>
-          <a>Home</a>
-        </Link>
-      </div>
-    )
-  } else {
-    return (
-      <div>
-        <h1>
-          In note {id}
-        </h1>
-
-        <Link href='/'>
-          <a>Home</a>
-        </Link>
-      </div>
-    )
-  }
+  return (
+    <div sx={{variant: 'containers.page'}}>
+      <h1>Note: {id} </h1>
+    </div>
+  )
 }
 
-export default Page;
+export default Page

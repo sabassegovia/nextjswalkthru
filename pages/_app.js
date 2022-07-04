@@ -1,14 +1,17 @@
-import '../styles/globals.css'
-import { roboto } from '@theme-ui/presets';
-import { ThemeProvider } from 'theme-ui';
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import { ThemeProvider } from 'theme-ui'
+import theme from '../theme'
+import Nav from '../src/components/nav'
 
-function MyApp({ Component, pageProps }) {
+export default function App({ Component, pageProps }) {
   return (
-    <ThemeProvider theme={roboto}>
-      <Component {...pageProps} />
-
+    <ThemeProvider theme={theme}>
+      <div>
+        <Nav />
+        <Component {...pageProps} />
+      </div>
     </ThemeProvider>
   )
 }
-
-export default MyApp
