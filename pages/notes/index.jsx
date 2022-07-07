@@ -3,9 +3,7 @@
 import { jsx } from 'theme-ui'
 import Link from 'next/link'
 
-const Page = () => {
-  const notes = new Array(15).fill(1).map((e, i) => ({id: i, title: `This is note ${i}`}))
-
+const Page = ({ notes }) => {
   return (
     <div sx={{variant: 'containers.page'}}>
       <h1>My Notes</h1>
@@ -28,3 +26,16 @@ const Page = () => {
 }
 
 export default Page;
+
+
+export async function getServerSideProps() {
+  const res = await fetch(`http://localhost:3000/api/note/`);
+  const { data } = await res.json();
+  // console.log('');
+
+  return {
+    props: {
+      notes: data
+    }
+  }
+}

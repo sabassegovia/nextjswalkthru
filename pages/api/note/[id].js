@@ -10,7 +10,7 @@ const handler = nc()
 
     if (!note) {
       res.status(404)
-      res.end()
+      res.end('no note found')
       return
     }
 
