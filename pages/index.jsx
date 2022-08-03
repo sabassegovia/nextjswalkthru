@@ -21,7 +21,7 @@ export async function getStaticProps() {
   return {
     props: {
       content: {
-        title: 'Look at my note app tho'
+        title: `Simple note taking app template built on Next.JS to view SSR`
       }
     }
   }
